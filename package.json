@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "lint-staged": {
-  "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"]
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "scripts": {
     "dev": "vite",
