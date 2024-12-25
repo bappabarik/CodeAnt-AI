@@ -13,17 +13,26 @@ const StatisticsSection = () => {
       const apiUrl = import.meta.env.VITE_MOCK_DATA_API_URL;
 
       try {
-        const response = await axios.get(apiUrl);
-        console.log("Data fetched successfully:", response.data[0]);
-        setStats(response.data[0]);
-        setLoading(false);
+        const statsData = JSON.parse(sessionStorage.getItem("stats"));
+        if (!statsData) {
+          const response = await axios.get(apiUrl);
+          console.log("Data fetched successfully:", response.data[0]);
+          setStats(response.data[0]);
+          setLoading(false);
+          sessionStorage.setItem("stats", JSON.stringify(response.data[0]));
+        } else {
+          setStats(statsData);
+          setLoading(false);
+        }
       } catch (error) {
         console.error("Error fetching data:", error.message);
         setLoading(false);
       }
     };
 
-    fetchData();
+    setTimeout(() => {
+      fetchData();
+    }, 500);
 
     const randomInterval = setInterval(() => {
       setRandomNumber((prev) => prev + Math.floor(Math.random() * 10));
@@ -59,7 +68,7 @@ const StatisticsSection = () => {
                 value: `${loading ? randomNumber : stats?.hoursSaved}K`,
               },
             ].map(({ title, value }) => (
-              <div className="text-center" key={title}>
+              <div className="text-center w-[123px]" key={title}>
                 <p className="text-xl font-bold text-gray-800">{value}</p>
                 <p className="text-sm text-gray-500">{title}</p>
               </div>
@@ -72,12 +81,12 @@ const StatisticsSection = () => {
               <div>
                 <img src={assets.icons.PieChartIcon} alt="" className="mb-4" />
                 <p className="font-bold">Issues Fixed</p>
-                <p className="text-3xl font-bold text-gray-800">
+                <p className="text-3xl font-bold text-gray-800 w-[108px]">
                   {loading ? randomNumber : stats?.issuesFixed}K+
                 </p>
               </div>
               <div>
-                <p className="text-blue-600 font-bold">
+                <p className="text-blue-600 font-bold w-[40px]">
                   ↑{loading ? randomNumber : stats?.thisWeek}%
                 </p>
                 <p className="text-sm">This week</p>

@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center w-full">
       <StatisticsSection />
-      <div className="flex flex-col w-1/2 width-full md:p-4 py-20 px-4 gap-3 items-center justify-center bg-[#fafafa]">
+      <div className="flex flex-col w-1/2 width-full md:p-4 px-4 gap-3 items-center justify-center min-h-screen bg-[#fafafa]">
         <LoginSection />
         <p className="mt-4 text-sm">
           By signing up, you agree to the{" "}
