@@ -53,7 +53,7 @@ const LoginSection = () => {
     activeTab === "SAAS" ? saasAuthProviders : selfHostedAuthProviders;
 
   return (
-    <div className="shadow-[0_1px_2px_rgba(10,13,18,0.05)] rounded-xl w-full flex items-center justify-center flex-col space-y-4 border-[1px] border-[rgba(233,234,235,1)">
+    <div className="shadow-[0_1px_2px_rgba(10,13,18,0.05)] bg-white rounded-xl w-full flex items-center justify-center flex-col space-y-4 border-[1px] border-[rgba(233,234,235,1)">
       <div className="border-[1px] border-b-[rgba(213,215,218,1)] rounded-t-xl p-4 gap-4 w-full flex flex-col items-center justify-center">
         <span className="flex gap-4 items-center justify-center my-5">
           <img

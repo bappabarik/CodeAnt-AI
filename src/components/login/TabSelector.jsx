@@ -3,10 +3,10 @@ const TabSelector = ({ activeTab, onTabChange }) => (
     {["SAAS", "Self Hosted"].map((tab) => (
       <button
         key={tab}
-        className={`md:w-80 w-40 px-6 py-4 md:text-xl rounded-md text-lg transition-all duration-300 ease-in-out ${
+        className={`md:max-w-80 min-w-36 px-6 py-4 md:text-xl rounded-md text-md transition-all duration-300 ease-in-out ${
           activeTab === tab
             ? " bg-blue-600 font-bold text-white"
-            : "text-gray-500 font-bold"
+            : "text-gray-500 font-bold bg-[#fafafa]"
         }`}
         onClick={() => onTabChange(tab)}
       >

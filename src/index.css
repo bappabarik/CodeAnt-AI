@@ -5,3 +5,17 @@
 body {
     font-family: "Inter", serif;
 }
+
+
+/* hide stats on small screens */
+
+@media (max-width: 1024px) {
+    .hide {
+      display: none !important;
+    }
+
+    /* adjusted the width of the loginsection */
+    .width-full {
+        width: 100%;
+    }
+}
