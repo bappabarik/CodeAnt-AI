@@ -31,6 +31,7 @@ export default [
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
       ...prettier.configs.recommended.rules,
+      "react/prop-types": "off",
       "prettier/prettier": "warn",
       "react/jsx-no-target-blank": "off",
       "react-refresh/only-export-components": [
