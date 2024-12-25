@@ -70,7 +70,7 @@ const StatisticsSection = () => {
             ].map(({ title, value }) => (
               <div className="text-center w-[123px]" key={title}>
                 <p className="text-xl font-bold text-gray-800">{value}</p>
-                <p className="text-sm text-gray-500">{title}</p>
+                <p className="text-sm text-[rgba(23,23,23,1)]">{title}</p>
               </div>
             ))}
           </div>

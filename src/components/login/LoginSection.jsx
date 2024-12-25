@@ -54,7 +54,7 @@ const LoginSection = () => {
 
   return (
     <div className="shadow-[0_1px_2px_rgba(10,13,18,0.05)] bg-white rounded-xl w-full flex items-center justify-center flex-col space-y-4 border-[1px] border-[rgba(233,234,235,1)">
-      <div className="border-[1px] border-b-[rgba(213,215,218,1)] rounded-t-xl p-4 gap-4 w-full flex flex-col items-center justify-center">
+      <div className="border-[1px] border-b-[rgba(213,215,218,1)] rounded-t-xl md:px-6 px-4 py-4 gap-4 w-full flex flex-col items-center justify-center">
         <span className="flex gap-4 items-center justify-center my-5">
           <img
             src={assets.logos.AntLogo}
@@ -69,8 +69,7 @@ const LoginSection = () => {
         {/* Tab Selector */}
         <TabSelector activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
-      {/* <hr className="border-[1px] border-[rgba(230,232,240,1)]" /> */}
-      <div className="flex flex-col gap-4 py-6 h-[326px]">
+      <div className="flex flex-col gap-4 py-2 md:px-24 px-4 h-[326px] w-full">
         {authProviders.map(({ icon, label, provider }) => (
           <AuthProviderButton
             key={provider}
