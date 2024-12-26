@@ -1,9 +1,10 @@
 import Container from "../components/common/Container";
+import UnderConstruction from "../components/common/UnderConstruction";
 
 const CodeReview = () => {
   return (
     <Container>
-      <div>nothing</div>
+      <UnderConstruction page={"AI Code Review"} />
     </Container>
   );
 };

@@ -2,9 +2,11 @@ import { useState } from "react";
 import TabSelector from "./TabSelector";
 import AuthProviderButton from "./AuthProviderButton";
 import assets from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const LoginSection = () => {
   const [activeTab, setActiveTab] = useState("SAAS");
+  const navigate = useNavigate();
 
   const saasAuthProviders = [
     {
@@ -44,11 +46,6 @@ const LoginSection = () => {
     },
   ];
 
-  const handleLogin = (provider) => {
-    console.log(`Logging in with ${provider}`);
-    // Replace with `authService.loginWithProvider(provider)`
-  };
-
   const authProviders =
     activeTab === "SAAS" ? saasAuthProviders : selfHostedAuthProviders;
 
@@ -75,7 +72,7 @@ const LoginSection = () => {
             key={provider}
             icon={icon}
             label={label}
-            onClick={() => handleLogin(provider)}
+            onClick={() => navigate(`/${provider}`)}
           />
         ))}
       </div>

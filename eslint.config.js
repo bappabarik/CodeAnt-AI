@@ -32,6 +32,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
       ...prettier.configs.recommended.rules,
       "react/prop-types": "off",
+      "react/display-name": "off",
       "prettier/prettier": "warn",
       "react/jsx-no-target-blank": "off",
       "react-refresh/only-export-components": [

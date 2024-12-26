@@ -13,6 +13,8 @@ import CloudSecurity from "./pages/CloudSecurity.jsx";
 import HowtoUse from "./pages/HowtoUse.jsx";
 import Settings from "./pages/Settings.jsx";
 import AuthLayout from "./components/layout/AuthLayout.jsx";
+import LoginWithProvider from "./components/login/LoginWithProvider.jsx";
+import Support from "./pages/Support.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication={false}>
             <Login />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/:provider",
+        element: (
+          <AuthLayout authentication={false}>
+            <LoginWithProvider />
           </AuthLayout>
         ),
       },
@@ -68,6 +78,14 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             <Settings />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/support",
+        element: (
+          <AuthLayout authentication>
+            <Support />
           </AuthLayout>
         ),
       },

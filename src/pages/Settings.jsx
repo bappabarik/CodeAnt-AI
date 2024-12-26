@@ -1,9 +1,10 @@
 import Container from "../components/common/Container";
+import UnderConstruction from "../components/common/UnderConstruction";
 
 const Settings = () => {
   return (
     <Container>
-      <div>nothing</div>
+      <UnderConstruction page={"Settings"} />
     </Container>
   );
 };

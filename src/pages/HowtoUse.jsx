@@ -1,9 +1,10 @@
 import Container from "../components/common/Container";
+import UnderConstruction from "../components/common/UnderConstruction";
 
 const HowtoUse = () => {
   return (
     <Container>
-      <div>nothing</div>
+      <UnderConstruction page={"How To Use"} />
     </Container>
   );
 };

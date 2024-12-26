@@ -4,9 +4,21 @@ import UserDropdown from "../common/UserDropdown";
 import NavLinks from "../common/NavLinks";
 import assets from "../../assets/assets";
 import Button from "../common/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(true);
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.auth.userData);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("userData");
+    dispatch(logout());
+    navigate("/");
+  };
 
   return (
     <div className="fixed z-10 bg-white top-0 md:w-64 w-full md:p-4 px-4 pt-4 md:h-screen md:flex flex-col border-[1px] border-[rgba(233,234,235,1)]">
@@ -25,7 +37,7 @@ const Navbar = () => {
       </div>
       {isActive && (
         <div className="w-full h-full">
-          <UserDropdown user={"bappabarik"} />
+          <UserDropdown user={userData.name} />
           <div className=" flex flex-col md:justify-between h-full ">
             <NavLinks />
             <ul className="md:my-8">
@@ -34,6 +46,7 @@ const Navbar = () => {
                   icon={<assets.icons.callIcon className="text-xl" />}
                   label={"Support"}
                   className={"hover:bg-gray-100 w-full"}
+                  onclick={() => navigate("/support")}
                 />
               </li>
               <li>
@@ -41,6 +54,7 @@ const Navbar = () => {
                   icon={<assets.icons.logoutIcon className="text-xl" />}
                   label={"Logout"}
                   className={"hover:bg-gray-100 w-full"}
+                  onclick={handleLogout}
                 />
               </li>
             </ul>
