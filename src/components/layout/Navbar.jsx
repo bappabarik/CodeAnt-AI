@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         <Logo />
         <button
-          className="md:hidden flex items-start justify-center self-start py-3"
+          className="md:hidden flex items-start justify-center self-start py-3 outline-none focus:outline-none"
           onClick={() => setIsActive(!isActive)}
         >
           {isActive ? (
