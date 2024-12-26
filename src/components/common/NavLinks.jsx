@@ -37,7 +37,7 @@ const NavLinks = () => {
           <NavLink
             to={slug}
             className={({ isActive }) =>
-              `${isActive ? "bg-[rgba(21,112,239,1)] text-white hover:bg-[rgba(21,112,239,1)]" : "bg-white"} w-full font-bold rounded-md px-4 py-3 text-gray-700 focus:outline-none flex gap-2 items-center justify-left hover:bg-gray-100`
+              `${isActive ? "bg-[rgba(21,112,239,1)] text-white hover:bg-[rgba(21,112,239,1)]" : "hover:bg-gray-100"} w-full font-bold rounded-md px-4 py-3 text-gray-700 focus:outline-none flex gap-2 items-center justify-left`
             }
           >
             {icon}

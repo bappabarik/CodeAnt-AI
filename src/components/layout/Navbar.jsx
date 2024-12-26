@@ -33,14 +33,14 @@ const Navbar = () => {
                 <Button
                   icon={<assets.icons.callIcon className="text-xl" />}
                   label={"Support"}
-                  className={"hover:bg-gray-100"}
+                  className={"hover:bg-gray-100 w-full"}
                 />
               </li>
               <li>
                 <Button
                   icon={<assets.icons.logoutIcon className="text-xl" />}
                   label={"Logout"}
-                  className={"hover:bg-gray-100"}
+                  className={"hover:bg-gray-100 w-full"}
                 />
               </li>
             </ul>
