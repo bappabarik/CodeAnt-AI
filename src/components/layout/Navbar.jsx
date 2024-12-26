@@ -9,7 +9,7 @@ import { logout } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.userData);
   const navigate = useNavigate();
