@@ -7,12 +7,16 @@ import Button from "../common/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(true);
+  const isMobile = useIsMobile();
+  const [isActive, setIsActive] = useState(!isMobile);
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.userData);
   const navigate = useNavigate();
+
+  console.log(isMobile);
 
   const handleLogout = () => {
     localStorage.removeItem("userData");
