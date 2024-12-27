@@ -20,7 +20,7 @@ const RepoList = ({
             Repositories
           </p>
           <p className="text-sm text-[rgba(65,70,81,1)]">
-            {repos.length} Total Repositories
+            {repos?.length} Total Repositories
           </p>
         </div>
         <div className=" flex gap-2 items-end justify-end item-left flex-wrap">

@@ -16,8 +16,6 @@ const Navbar = () => {
   const userData = useSelector((state) => state.auth.userData);
   const navigate = useNavigate();
 
-  console.log(isMobile);
-
   const handleLogout = () => {
     localStorage.removeItem("userData");
     dispatch(logout());

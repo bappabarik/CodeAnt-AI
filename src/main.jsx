@@ -15,6 +15,7 @@ import Settings from "./pages/Settings.jsx";
 import AuthLayout from "./components/layout/AuthLayout.jsx";
 import LoginWithProvider from "./components/login/LoginWithProvider.jsx";
 import Support from "./pages/Support.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
             <Support />
           </AuthLayout>
         ),
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

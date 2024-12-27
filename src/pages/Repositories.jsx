@@ -37,7 +37,6 @@ const Repositories = () => {
       if (cacheRepos) {
         setRepos(JSON.parse(cacheRepos));
         setAllRepos(JSON.parse(cacheRepos));
-        console.log("localstore", JSON.parse(cacheRepos));
         setLoading(false);
       } else fetchRepos(); // Call the async function
     }

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -7,8 +7,7 @@ import { login } from "./store/authSlice";
 function App() {
   const authStatus = useSelector((state) => state.auth.status);
   const dispatch = useDispatch();
-
-  // console.log(authStatus);
+  const location = useLocation();
 
   useEffect(() => {
     const userData = localStorage.getItem("userData");
@@ -17,9 +16,18 @@ function App() {
     }
   });
 
+  const hideNavbar = [
+    "/support",
+    "/settings",
+    "/docs",
+    "/cloud-security",
+    "/code-review",
+    "/repos",
+  ].includes(location.pathname);
+
   return (
     <div className="md: flex">
-      {authStatus && <Navbar />}
+      {hideNavbar && authStatus && <Navbar />}
       <Outlet />
     </div>
   );
