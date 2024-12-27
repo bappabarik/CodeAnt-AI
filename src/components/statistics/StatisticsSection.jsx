@@ -13,13 +13,13 @@ const StatisticsSection = () => {
       const apiUrl = import.meta.env.VITE_MOCK_DATA_API_URL;
 
       try {
-        const statsData = JSON.parse(sessionStorage.getItem("stats"));
+        const statsData = JSON.parse(localStorage.getItem("stats"));
         if (!statsData) {
           const response = await axios.get(apiUrl);
           console.log("Data fetched successfully:", response.data[0]);
           setStats(response.data[0]);
           setLoading(false);
-          sessionStorage.setItem("stats", JSON.stringify(response.data[0]));
+          localStorage.setItem("stats", JSON.stringify(response.data[0]));
         } else {
           setStats(statsData);
           setLoading(false);
