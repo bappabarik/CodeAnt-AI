@@ -16,7 +16,6 @@ const StatisticsSection = () => {
         const statsData = JSON.parse(localStorage.getItem("stats"));
         if (!statsData) {
           const response = await axios.get(apiUrl);
-          console.log("Data fetched successfully:", response.data[0]);
           setStats(response.data[0]);
           setLoading(false);
           localStorage.setItem("stats", JSON.stringify(response.data[0]));
