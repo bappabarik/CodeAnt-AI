@@ -24,6 +24,7 @@ const LoginWithProvider = () => {
           .then((userData) => {
             dispatch(login(userData));
             localStorage.setItem("userData", JSON.stringify(userData));
+            localStorage.removeItem("repos");
             setActive(false);
           })
           .catch((error) => {
