@@ -4,9 +4,7 @@ import { useEffect } from "react";
 
 const Home = () => {
   const authStatus = useSelector((state) => state.auth.status);
-  const userData = useSelector((state) => state.auth.userData);
   const navigate = useNavigate();
-  console.log(userData);
 
   useEffect(() => {
     if (authStatus) {

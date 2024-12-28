@@ -17,7 +17,6 @@ const LoginWithProvider = () => {
     e.preventDefault();
     setActive(true);
     if (password.trim() !== "" && username.trim() !== "") {
-      console.log(username, password);
       const user = AuthService({ username, password });
 
       if (user) {
