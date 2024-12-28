@@ -1,6 +1,21 @@
 import assets from "../../assets/assets";
 
-const RepoCard = ({ title, status, language, size, date }) => {
+const RepoCard = ({ title, status, language, size, timestamp }) => {
+  const timeAgo = (timestamp) => {
+    const currentDate = new Date();
+    const targetDate = new Date(timestamp * 1000);
+    const timeDifference = currentDate - targetDate;
+
+    // Calculate the number of days
+    const daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    if (daysAgo > 0) {
+      return `Updated ${daysAgo} day${daysAgo > 1 ? "s" : ""} ago`;
+    } else {
+      return "Updated today";
+    }
+  };
+
   return (
     <div className="w-full hover:bg-gray-100 bg-white cursor-pointer md:p-6 p-3 border-b gap-4 flex flex-col">
       <div className=" flex gap-3 items-center">
@@ -20,7 +35,7 @@ const RepoCard = ({ title, status, language, size, date }) => {
           {" "}
           <assets.icons.dbIcon /> {size}KB
         </span>
-        <span className="text-[rgba(24,29,39,1)]">{date}</span>
+        <span className="text-[rgba(24,29,39,1)]">{timeAgo(timestamp)}</span>
       </div>
     </div>
   );

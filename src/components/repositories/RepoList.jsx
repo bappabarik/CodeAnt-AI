@@ -58,7 +58,7 @@ const RepoList = ({
                 status={repo.status ? "Public" : "Private"}
                 language={repo.language}
                 size={repo.memory}
-                date={"Updated 6 days ago"}
+                timestamp={repo.updatedAt}
               />
             </li>
           ))
